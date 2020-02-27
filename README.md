@@ -1,2 +1,2 @@
 # Assignment2_CompModeling
-Assignment 2, Computational Modeling for Cognitive Science
+Evaluating the CogSci knowledge of CogSci teachers - aka estimating a rate from binomial data.
