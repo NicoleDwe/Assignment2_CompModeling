@@ -483,12 +483,6 @@ prior = dnorm(p_grid, 0.8, 0.2)
 
 #2019 calculations (save posteriors to use as priors in next calculation)
 Riccardo2019 <- calc_teacher(n_correct = 3, n_question = 6, prior = prior, length_out = 10000) #first ones 
-pretty_plot(p_grid = p_grid, likelihood = Riccardo2019$likelihood, prior = Riccardo2019$prior, posterior = Riccardo2019$teacher_posterior, title = "Riccardo" )
-```
-
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-1.png)
-
-``` r
 Kristian2019 <- calc_teacher(n_correct = 2, n_question = 2, prior = prior, length_out = 10000) #first ones 
 Josh2019 <- calc_teacher(n_correct = 160, n_question = 198, prior = prior, length_out = 10000) #first ones 
 Mikkel2019 <- calc_teacher(n_correct = 66, n_question = 132, prior = prior, length_out = 10000) #first ones 
@@ -505,28 +499,28 @@ Mikkel2020 <- calc_teacher(n_correct = 34, n_question = 65, prior = Mikkel2019$t
 pretty_plot(p_grid = p_grid, prior = Riccardo2020$prior, likelihood = Riccardo2020$likelihood, posterior = Riccardo2020$teacher_posterior, title = "Riccardo")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-2.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
 ``` r
 #Kristian 
 pretty_plot(p_grid = p_grid, prior = Kristian2020$prior, likelihood = Kristian2020$likelihood, posterior = Kristian2020$teacher_posterior, title = "Kristian")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-3.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-2.png)
 
 ``` r
 #Josh 
 pretty_plot(p_grid = p_grid, prior = Josh2020$prior, likelihood = Josh2020$likelihood, posterior = Josh2020$teacher_posterior, title = "Josh")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-4.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-3.png)
 
 ``` r
 #Mikkel
 pretty_plot(p_grid = p_grid, prior = Mikkel2020$prior, likelihood = Mikkel2020$likelihood, posterior = Mikkel2020$teacher_posterior, title = "Mikkel")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-5.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-4.png)
 
 ``` r
 #Difference of Riccardo 2020 posterior and 2019 posterior
@@ -534,7 +528,7 @@ diff_post <- abs(Riccardo2020$teacher_posterior-Riccardo2019$teacher_posterior)
 plot(diff_post)
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-6.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-5.png)
 
 ``` r
 #CALCULATE MEAN AND SD FOR POSTERIOR DISTRIBUTIONS 
@@ -544,7 +538,7 @@ samples <- sample(Riccardo2019$grid , prob = Riccardo2019$teacher_posterior, siz
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.628
+    ## [1] 0.629
 
 ``` r
 sd <- round(sd(samples), 3) #sd of posterior
@@ -554,13 +548,13 @@ samples <- sample(Kristian2019$grid , prob = Kristian2019$teacher_posterior, siz
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.802
+    ## [1] 0.801
 
 ``` r
 round(sd(samples), 3) #sd of posterior
 ```
 
-    ## [1] 0.133
+    ## [1] 0.135
 
 ``` r
 #Josh 
@@ -568,7 +562,7 @@ samples <- sample(Josh2019$grid , prob = Josh2019$teacher_posterior, size = 1e4 
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.804
+    ## [1] 0.805
 
 ``` r
 round(sd(samples), 3) #sd of posterior
@@ -582,7 +576,7 @@ samples <- sample(Mikkel2019$grid , prob = Mikkel2019$teacher_posterior, size = 
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.513
+    ## [1] 0.514
 
 ``` r
 round(sd(samples), 3) #sd of posterior
@@ -597,7 +591,7 @@ samples <- sample(Riccardo2020$grid , prob = Riccardo2020$teacher_posterior, siz
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.744
+    ## [1] 0.741
 
 ``` r
 sd <- round(sd(samples), 3) #sd of posterior
@@ -607,13 +601,13 @@ samples <- sample(Kristian2020$grid , prob = Kristian2020$teacher_posterior, siz
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.718
+    ## [1] 0.72
 
 ``` r
 round(sd(samples), 3) #sd of posterior
 ```
 
-    ## [1] 0.095
+    ## [1] 0.094
 
 ``` r
 #Josh 
@@ -635,7 +629,7 @@ samples <- sample(Mikkel2020$grid , prob = Mikkel2020$teacher_posterior, size = 
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.515
+    ## [1] 0.516
 
 ``` r
 round(sd(samples), 3) #sd of posterior
@@ -654,27 +648,27 @@ post_pred <- rbinom(1e4 , size = 10 , prob = samples)
 simplehist(post_pred, xlab = "Number of Correct Answers", main = "Riccardo")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-7.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-6.png)
 
 ``` r
 #prediction errors
 simplehist(post_pred-9, main = "Riccardo: Prediction Error for 9/10 Questions", xlab = "Prediction Error")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-8.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-7.png)
 
 ``` r
 #calcualting precentage of chance of getting 2020 values based on 2019 posterior
 sum(post_pred == 9)/1e4*100 #exactly 9
 ```
 
-    ## [1] 9.4
+    ## [1] 8.75
 
 ``` r
 sum(post_pred >= 9-1 & post_pred <= 9+1)/1e4*100 #between 8 and 10
 ```
 
-    ## [1] 28.28
+    ## [1] 28.52
 
 ``` r
 #Kristian: in 2020 got 8/12
@@ -684,27 +678,27 @@ post_pred <- rbinom(1e4 , size= 12 , prob = samples)
 simplehist(post_pred, xlab = "Number of Correct Answers", main = "Kristian")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-9.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-8.png)
 
 ``` r
 #prediction errors
 simplehist(post_pred-8, main = "Kristian: Prediction Error for 8/12 Questions", xlab = "Prediction Error")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-10.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-9.png)
 
 ``` r
 #calcualting precentage of chance of getting 2020 values based on 2019 posterior
 sum(post_pred == 8)/1e4*100
 ```
 
-    ## [1] 10.6
+    ## [1] 10.03
 
 ``` r
 sum(post_pred >= 8-1 & post_pred <= 8+1)/1e4*100
 ```
 
-    ## [1] 31.8
+    ## [1] 31.42
 
 ``` r
 #Josh: in 2020 got 148/172
@@ -714,27 +708,27 @@ post_pred <- rbinom(1e4 , size= 172 , prob = samples)
 simplehist(post_pred, xlab = "Number of Correct Answers", main = "Josh")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-11.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-10.png)
 
 ``` r
 #prediction errors
 simplehist(post_pred-148, main = "Josh: Prediction Error for 148/172 Questions", xlab = "Prediction Error")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-12.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-11.png)
 
 ``` r
 #calcualting precentage of chance of getting 2020 values based on 2019 posterior
 sum(post_pred == 148)/1e4*100
 ```
 
-    ## [1] 2.55
+    ## [1] 2.45
 
 ``` r
 sum(post_pred >= 148-3 & post_pred <= 148+3)/1e4*100
 ```
 
-    ## [1] 16.93
+    ## [1] 17.5
 
 ``` r
 #Mikkel: in 2020 got 34/65
@@ -744,24 +738,24 @@ post_pred <- rbinom(1e4 , size= 65 , prob = samples)
 simplehist(post_pred, xlab = "Number of Correct Answers", main = "Mikkel")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-13.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-12.png)
 
 ``` r
 #prediction errors
 simplehist(post_pred-34, main = "Mikkel: Prediction Error for 34/65 Questions", xlab = "Prediction Error")
 ```
 
-![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-14.png)
+![](Assignment2_files/figure-markdown_github/unnamed-chunk-7-13.png)
 
 ``` r
 #calcualting precentage of chance of getting 2020 values based on 2019 posterior
 sum(post_pred == 34)/1e4*100
 ```
 
-    ## [1] 8.31
+    ## [1] 7.72
 
 ``` r
 sum(post_pred >= 34-2 & post_pred <= 34+2)/1e4*100
 ```
 
-    ## [1] 38.82
+    ## [1] 38.35
