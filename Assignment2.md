@@ -24016,7 +24016,7 @@ round(mean(samplesR), 3) #mean of posterior
 round(sd(samplesR), 3) #sd of posterior
 ```
 
-    ## [1] 0.166
+    ## [1] 0.167
 
 ``` r
 #Kristian 
@@ -24024,7 +24024,7 @@ samplesK <- sample(Kristian$grid, prob = Kristian$teacher_posterior, size = 1e4 
 round(mean(samplesK), 3) #mean of posterior
 ```
 
-    ## [1] 0.75
+    ## [1] 0.751
 
 ``` r
 round(sd(samplesK), 3) #sd of posterior
@@ -24044,7 +24044,7 @@ round(mean(samplesJ), 3) #mean of posterior
 round(sd(samplesJ), 3) #sd of posterior
 ```
 
-    ## [1] 0.028
+    ## [1] 0.027
 
 ``` r
 #Mikkel
@@ -24065,13 +24065,13 @@ round(sd(samplesM), 3) #sd of posterior
 sum(samplesJ > samplesK)/10000*100
 ```
 
-    ## [1] 51.92
+    ## [1] 52.04
 
 ``` r
 sum(samplesJ > samplesR)/10000*100
 ```
 
-    ## [1] 96.77
+    ## [1] 96.74
 
 ``` r
 sum(samplesJ > samplesM)/10000*100
@@ -24148,13 +24148,13 @@ samplesR <- sample(Riccardo$grid, prob = Riccardo$teacher_posterior, size = 1e4 
 round(mean(samplesR), 3) #mean of posterior
 ```
 
-    ## [1] 0.628
+    ## [1] 0.627
 
 ``` r
 round(sd(samplesR), 3) #sd of posterior
 ```
 
-    ## [1] 0.122
+    ## [1] 0.125
 
 ``` r
 #Kristian 
@@ -24162,13 +24162,13 @@ samplesK <- sample(Kristian$grid, prob = Kristian$teacher_posterior, size = 1e4 
 round(mean(samplesK), 3) #mean of posterior
 ```
 
-    ## [1] 0.804
+    ## [1] 0.803
 
 ``` r
 round(sd(samplesK), 3) #sd of posterior
 ```
 
-    ## [1] 0.132
+    ## [1] 0.131
 
 ``` r
 #Josh 
@@ -24176,7 +24176,7 @@ samplesJ <- sample(Josh$grid, prob = Josh$teacher_posterior, size = 1e4 , replac
 round(mean(samplesJ), 3) #mean of posterior
 ```
 
-    ## [1] 0.805
+    ## [1] 0.804
 
 ``` r
 round(sd(samplesJ), 3) #sd of posterior
@@ -24242,7 +24242,7 @@ round(mean(samplesR), 3) #mean of posterior
 round(sd(samplesR), 3) #sd of posterior
 ```
 
-    ## [1] 0.02
+    ## [1] 0.021
 
 ``` r
 #Kristian 
@@ -24454,7 +24454,7 @@ samplesR <- sample(Riccardo$grid, prob = Riccardo$teacher_posterior, size = 1e4 
 round(mean(samplesR), 3) #mean of posterior
 ```
 
-    ## [1] 0.374
+    ## [1] 0.372
 
 ``` r
 round(sd(samplesR), 3) #sd of posterior
@@ -24474,7 +24474,7 @@ round(mean(samplesK), 3) #mean of posterior
 round(sd(samplesK), 3) #sd of posterior
 ```
 
-    ## [1] 0.157
+    ## [1] 0.155
 
 ``` r
 #Josh 
@@ -24496,7 +24496,7 @@ samplesM <- sample(Mikkel$grid, prob = Mikkel$teacher_posterior, size = 1e4 , re
 round(mean(samplesM), 3) #mean of posterior
 ```
 
-    ## [1] 0.486
+    ## [1] 0.487
 
 ``` r
 round(sd(samplesM), 3) #sd of posterior
@@ -24762,7 +24762,7 @@ round(mean(samples), 3) #mean of posterior
 round(sd(samples), 3) #sd of posterior
 ```
 
-    ## [1] 0.134
+    ## [1] 0.133
 
 ``` r
 #Josh 
@@ -24809,7 +24809,7 @@ samples <- sample(Kristian2020$grid , prob = Kristian2020$teacher_posterior, siz
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.719
+    ## [1] 0.718
 
 ``` r
 round(sd(samples), 3) #sd of posterior
@@ -24823,7 +24823,7 @@ samples <- sample(Josh2020$grid , prob = Josh2020$teacher_posterior, size = 1e4 
 round(mean(samples), 3) #mean of posterior
 ```
 
-    ## [1] 0.83
+    ## [1] 0.831
 
 ``` r
 round(sd(samples), 3) #sd of posterior
@@ -24870,13 +24870,13 @@ simplehist(post_pred-9, main = "Riccardo: Prediction Error for 9/10 Questions", 
 sum(post_pred == 9)/1e4*100 #exactly 9
 ```
 
-    ## [1] 9.42
+    ## [1] 9.77
 
 ``` r
 sum(post_pred >= 9-1 & post_pred <= 9+1)/1e4*100 #between 8 and 10
 ```
 
-    ## [1] 28.41
+    ## [1] 28.54
 
 ``` r
 #Kristian: in 2020 got 8/12
@@ -24900,13 +24900,13 @@ simplehist(post_pred-8, main = "Kristian: Prediction Error for 8/12 Questions", 
 sum(post_pred == 8)/1e4*100
 ```
 
-    ## [1] 10.31
+    ## [1] 10.03
 
 ``` r
 sum(post_pred >= 8-1 & post_pred <= 8+1)/1e4*100
 ```
 
-    ## [1] 32.22
+    ## [1] 31.82
 
 ``` r
 #Josh: in 2020 got 148/172
@@ -24930,13 +24930,13 @@ simplehist(post_pred-148, main = "Josh: Prediction Error for 148/172 Questions",
 sum(post_pred == 148)/1e4*100
 ```
 
-    ## [1] 2.54
+    ## [1] 2.3
 
 ``` r
 sum(post_pred >= 148-3 & post_pred <= 148+3)/1e4*100
 ```
 
-    ## [1] 17.65
+    ## [1] 17.01
 
 ``` r
 #Mikkel: in 2020 got 34/65
@@ -24960,10 +24960,10 @@ simplehist(post_pred-34, main = "Mikkel: Prediction Error for 34/65 Questions", 
 sum(post_pred == 34)/1e4*100
 ```
 
-    ## [1] 7.77
+    ## [1] 8.04
 
 ``` r
 sum(post_pred >= 34-2 & post_pred <= 34+2)/1e4*100
 ```
 
-    ## [1] 38.4
+    ## [1] 38.81
